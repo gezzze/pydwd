@@ -137,8 +137,8 @@ def radolan_grid_example():
         parameter=DwdRadarParameter.RADOLAN_CDC,
         resolution=DwdRadarResolution.DAILY,
         period=DwdRadarPeriod.RECENT,
-        start_date="2020-09-04T12:00:00",
-        end_date="2020-09-04T12:00:00",
+        start_date="2021-04-24T12:00:00",
+        end_date="2021-04-24T12:00:00",
     )
 
     for item in radolan.query():
