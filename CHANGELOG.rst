@@ -4,7 +4,8 @@ Changelog
 Development
 ***********
 
-...
+- Enable selecting a parameter precisely from a dataset by passing a tuple like [("precipitation_height", "kl")] or
+  [("precipitation_height", "precipitation_more")]
 
 0.20.2 (26.06.2021)
 *******************

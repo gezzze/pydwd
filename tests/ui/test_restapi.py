@@ -229,8 +229,8 @@ def test_dwd_values_sql_tabular(dicts_are_same):
             "station": "01048,4411",
             "parameter": "kl",
             "resolution": "daily",
-            "period": "recent",
-            "date": "2019/2022",
+            # "period": "recent",
+            "date": "2019/2020",
             "sql-values": "SELECT * FROM data WHERE temperature_air_max_200 < 2.0",
             "tidy": False,
             "si-units": False,
@@ -241,28 +241,28 @@ def test_dwd_values_sql_tabular(dicts_are_same):
 
     data = response.json()["data"]
 
-    assert len(data) >= 49
+    assert len(data) == 23
     assert dicts_are_same(
         data[0],
         {
             "station_id": "01048",
-            "date": "2019-12-28T00:00:00+00:00",  # "2019-12-28T00:00:00.000Z",
+            "date": "2019-01-03T00:00:00+00:00",
             "qn_3": 10.0,
-            "qn_4": 3.0,
-            "cloud_cover_total": 7.4,
-            "humidity": 82.54,
+            "qn_4": 3,
+            "cloud_cover_total": 4.4,
+            "humidity": 85.92,
             "precipitation_form": 7.0,
-            "precipitation_height": 0.4,
-            "pressure_air": 1011.49,
-            "pressure_vapor": 5.2,
-            "snow_depth": 0.0,
+            "precipitation_height": 0.1,
+            "pressure_air": 1003.29,
+            "pressure_vapor": 4.5,
+            "snow_depth": 1,
             "sunshine_duration": 0.0,
-            "temperature_air_200": 0.4,
-            "temperature_air_max_200": 1.3,
-            "temperature_air_min_005": -1.0,
-            "temperature_air_min_200": -0.7,
-            "wind_gust_max": 7.7,
-            "wind_speed": 3.1,
+            "temperature_air_200": -2.1,
+            "temperature_air_max_200": -0.6,
+            "temperature_air_min_005": -7.5,
+            "temperature_air_min_200": -4.0,
+            "wind_gust_max": 12.5,
+            "wind_speed": 5.0,
         },
     )
 
